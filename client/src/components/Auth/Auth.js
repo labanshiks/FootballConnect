@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import { useNavigate } from 'react-router-dom';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 
-
+import { signin, signup } from '../../actions/auth';
 import useStyles from './styles';
 import Input from './Input';
+
+
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
+
 
 const Auth = () => {
 
 
+    const [form, setForm] = useState(initialState);
     const [isSignup, setIsSignup] = useState(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const classes = useStyles();
 
     const [showPassword, setShowPassword] = useState(false);
@@ -21,12 +30,18 @@ const Auth = () => {
         handleShowPassword(false);
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (isSignup) {
+            dispatch(signup(form, navigate));
+        } else {
+            dispatch(signin(form, navigate));
+        }
 
     };
-    const handleChange = () => {
+    const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-    };
 
 
 
