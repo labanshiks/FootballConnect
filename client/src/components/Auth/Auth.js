@@ -4,7 +4,6 @@ import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui
 import { useNavigate } from 'react-router-dom';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
-
 import { signin, signup } from '../../actions/auth';
 import useStyles from './styles';
 import Input from './Input';
@@ -16,7 +15,7 @@ const initialState = { firstName: '', lastName: '', email: '', password: '', con
 const Auth = () => {
 
 
-    const [form, setForm] = useState(initialState);
+    const [formData, setFormData] = useState(initialState);
     const [isSignup, setIsSignup] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -27,20 +26,20 @@ const Auth = () => {
 
     const switchMode = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup);
-        handleShowPassword(false);
+        setShowPassword(false);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (isSignup) {
-            dispatch(signup(form, navigate));
+            dispatch(signup(formData, navigate));
         } else {
-            dispatch(signin(form, navigate));
+            dispatch(signin(formData, navigate));
         }
 
     };
-    const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+    const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
 
 
