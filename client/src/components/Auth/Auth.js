@@ -12,9 +12,7 @@ import Input from './Input';
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
 
-const Auth = () => {
-
-
+const SignUp = () => {
     const [formData, setFormData] = useState(initialState);
     const [isSignup, setIsSignup] = useState(false);
     const dispatch = useDispatch();
@@ -25,6 +23,7 @@ const Auth = () => {
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !showPassword);
 
     const switchMode = () => {
+        setFormData(initialState);
         setIsSignup((prevIsSignup) => !prevIsSignup);
         setShowPassword(false);
     };
@@ -37,12 +36,9 @@ const Auth = () => {
         } else {
             dispatch(signin(formData, navigate));
         }
-
     };
+
     const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
-
-
-
 
     return (
         <Container component="main" maxWidth="xs">
@@ -79,4 +75,4 @@ const Auth = () => {
     )
 }
 
-export default Auth
+export default SignUp;
