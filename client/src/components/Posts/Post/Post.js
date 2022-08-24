@@ -55,7 +55,7 @@ const Post = ({ post, setCurrentId }) => {
                 </Button>
                 {(user?.result?._id === post?.creator) && (
                     <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
-                        <DeleteIcon fontSize="small" /> &nbsp; Delete
+                        <DeleteIcon fontSize="small" /> Delete
                     </Button>
                 )}
             </CardActions>
