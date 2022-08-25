@@ -25,11 +25,39 @@ const CommentSection = ({ post }) => {
   };
 
   return (
-    <div className={classes.commentsOuterContainer}>
+    <div>
+      <div className={classes.commentsOuterContainer}>
+        {user?.result?.name && (
+          <div style={{ width: "90%" }}>
+            <Typography gutterBottom variant="h6" component="h2">
+              Write a comment
+            </Typography>
+            <TextField
+              fullWidth
+              minRows={4}
+              variant="outlined"
+              label="Comment"
+              multiline
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              component="p"
+            />
+            <br />
+            <Button
+              style={{ marginTop: "10px" }}
+              fullWidth
+              disabled={!comment}
+              color="primary"
+              variant="contained"
+              onClick={handleComment}
+            >
+              Comment
+            </Button>
+          </div>
+        )}
+      </div>
+      <br />
       <div className={classes.commentsInnerContainer}>
-        <Typography gutterBottom variant="h6" component="h2">
-          Comments
-        </Typography>
         {comments.map((c, i) => (
           <Typography key={i} gutterBottom variant="subtitle1" component="p">
             <strong>{c.split(": ")[0]}</strong>
@@ -38,34 +66,6 @@ const CommentSection = ({ post }) => {
         ))}
         <div ref={commentsRef} />
       </div>
-      {user?.result?.name && (
-        <div style={{ width: "70%" }}>
-          <Typography gutterBottom variant="h6" component="h2">
-            Write a comment
-          </Typography>
-          <TextField
-            fullWidth
-            minRows={4}
-            variant="outlined"
-            label="Comment"
-            multiline
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-            component="p"
-          />
-          <br />
-          <Button
-            style={{ marginTop: "10px" }}
-            fullWidth
-            disabled={!comment}
-            color="primary"
-            variant="contained"
-            onClick={handleComment}
-          >
-            Comment
-          </Button>
-        </div>
-      )}
     </div>
   );
 };
