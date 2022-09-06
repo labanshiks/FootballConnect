@@ -5,8 +5,8 @@ import { getPosts, getPostsBySearch, getPost, createPost, updatePost, likePost, 
 const router = express.Router();
 import auth from "../middleware/auth.js";
 
-router.get('/search', getPostsBySearch);
 router.get('/', getPosts);
+router.get('/search', getPostsBySearch);
 router.get('/:id', getPost);
 
 router.post('/', auth, createPost);

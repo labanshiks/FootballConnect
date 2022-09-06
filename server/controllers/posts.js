@@ -1,3 +1,4 @@
+// handlers for our routes
 import express from 'express';
 import mongoose from 'mongoose';
 
@@ -5,6 +6,7 @@ import PostMessage from '../models/postMessage.js';
 
 const router = express.Router();
 
+//get all post messages
 export const getPosts = async (req, res) => {
     const { page } = req.query;
 
@@ -47,6 +49,7 @@ export const getPost = async (req, res) => {
     }
 }
 
+// creating a post
 export const createPost = async (req, res) => {
     const post = req.body;
 
