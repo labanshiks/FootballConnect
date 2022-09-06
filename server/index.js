@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 import postRoutes from './routes/posts.js';
 import userRouter from "./routes/user.js";
 
-
+//initializing the app
 const app = express();
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
