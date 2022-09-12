@@ -1,4 +1,4 @@
-# MEMORIES
+# OURMEMORIES
 Full Stack MERN Social Media App
 
 ### Introduction
