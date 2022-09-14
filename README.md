@@ -1,7 +1,13 @@
-# MEMORIES
+# OURMEMORIES
 Full Stack MERN Social Media App
 
 ### Introduction
+This is a Full Stack MERN ( MongoDB, ExpressJs React and Node.js) Application.
 
+###  Features
+- User Authentication
+- Create, Edit and Delete posts
+- Search feature based on name and tags 
+- Recommended posts section
+- Comments section
 
-Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called "Memories" and it is a simple social media app that allows users to post interesting events that happened in their lives.
