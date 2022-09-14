@@ -1,4 +1,4 @@
-# OURMEMORIES
+# THEBEAUTIFULGAME
 Full Stack MERN Social Media App
 
 ### Introduction
