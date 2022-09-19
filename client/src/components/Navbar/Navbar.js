@@ -6,7 +6,6 @@ import decode from 'jwt-decode';
 
 import Logo from '../../images/Logo.png';
 import logoText from '../../images/logoText.png';
-import memoriesText from '../../images/memoriesText.png';
 import useStyles from './styles';
 import * as actionType from '../../constants/actionTypes';
 
