@@ -13,8 +13,6 @@ RUN npm install -g npm@10.4.0
 # Copy the entire project to the working directory
 COPY . .
 
-ENV REACT_APP_API_BASE_URL = http://localhost:5000
-
 # Expose port to the outside world
 EXPOSE 3000
 

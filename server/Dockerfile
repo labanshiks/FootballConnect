@@ -13,7 +13,7 @@ RUN npm install
 # Copy the entire project to the working directory
 COPY . .
 
-# Expose port 80 to the outside world
+# Expose port 5000 to the outside world
 EXPOSE 5000
 
 # Start client server when the container starts
